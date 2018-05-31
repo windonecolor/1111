@@ -2,31 +2,46 @@
 #include<conio.h>
 
 int main() {
+	int m;
+	m = Input();
+	Action(m);
+
+	_getch();
+	return 0;
+}
+
+int Input() {
 	int n;
-	int temp;
+	printf("Vui long nhap vao so nguyen co 3 chu so: ");
 
-	printf("Vui long nhap so nguyen co 3 chu so : ");
-	nhap:
-	scanf_s("%d", &n);
+	do
+	{
+		scanf_s("%d", &n);
 
-	if (n < 100 || n > 999) {
-		printf("Vui long nhap so nguyen co 3 chu so : ");
-		printf("\nVui long nhap lai !!!");
-		goto nhap;
+		if (n < 100 || n > 999) {
+			printf("Ban nhap sai !!!\nVui long nhap lai: ");
+		}
 	}
 
-	int a;
-	a= n % 10; 
-	int j;
-	j = n / 10;
-	int b;
-	b = j % 10;
-	int c;
-	c = j / 10; 
+	while (n < 100 || n > 999);
 
-	
+	return n;
+}
+int Action(int m) {
+
+	int a;
+	a = m % 10; 
+	int j;
+	j = m / 10;
+	int b;
+	b = j % 10; 
+	int c;
+	c = j / 10;
+
+	int temp;
+
 	if (a>b) {
-		temp = a;
+		temp = a; 
 		a = b;
 		b = temp;
 	}
@@ -37,15 +52,12 @@ int main() {
 		c = temp;
 	}
 
-	
 	if (b>c) {
-		temp = b;
+		temp = b; 
 		b = c;
 		c = temp;
 	}
 
-	printf("\n %d%d%d", c, b, a);
-
-	_getch();
-	return 0;
+	printf("\n%d%d%d", c, b, a);
 }
+

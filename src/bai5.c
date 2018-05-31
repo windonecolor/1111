@@ -17,8 +17,7 @@ int main() {
 
                 if( ngay>0 && ngay<=31){
                 
-                	if( nam%4 ==0 && nam %100 !=0 || nam%400 ==0 ) printf("Nam la nam nhuan ! ");
-		            else printf("Nam khong phai nam nhuan ! "); 
+                	tinhnamnhuan ();
 		            break;
 		        }
 				 			
@@ -32,8 +31,7 @@ int main() {
 
                 if( ngay<=30 && ngay>0){
 
-                    if( nam%4 ==0 && nam %100 !=0 || nam%400 ==0 ) printf("Nam la nam nhuan ! ");
-		            else printf("Nam khong phai nam nhuan ! "); 
+                    tinhnamnhuan ();
 		            break;   
 			    }
 
@@ -50,9 +48,9 @@ int main() {
                 if( nam%4 ==0 && nam %100 !=0 || nam%400 ==0 ) printf("Nam la nam nhuan ! ");
 		            else
 					{
-						if(ngay==29){
-							if( nam%4 ==0 && nam %100 !=0 || nam%400 ==0 ) printf("Nam la nam nhuan ! ");
-							else printf("Ngay %d thang %d nam %d : Ko hop le !",ngay,thang,nam) ;
+						if(ngay==29){	
+											
+						    printf("Ngay %d thang %d nam %d : Ko hop le !",ngay,thang,nam) ;
 							break;
 						}
 				     
@@ -71,5 +69,12 @@ int main() {
 	         break;
 
     }
-
+       _getch ();
+       return 0;
 }
+    
+int tinhnamnhuan (int nam){
+	if( nam%4 ==0 && nam %100 !=0 || nam%400 ==0 ) printf("Nam la nam nhuan ! ");
+	else printf("Nam khong phai nam nhuan ! "); 
+}    
+
